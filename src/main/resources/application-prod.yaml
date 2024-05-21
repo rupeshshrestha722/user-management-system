@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://http://localhost:3306/user-management-system
