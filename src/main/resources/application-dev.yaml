@@ -3,3 +3,9 @@ spring:
     username: root
     password:
     url: jdbc:mysql://localhost:3306/user-management-system
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+

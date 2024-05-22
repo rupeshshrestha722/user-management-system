@@ -1,7 +1,6 @@
 package com.rupeshshrestha.usermanagement.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -32,7 +31,6 @@ public class User extends IdentifiableEntity {
     private String lastName;
 
     @Column(name="EMAIL", unique = true)
-    @Email
     private String email;
 
     @Column(name = "DATE_OF_BIRTH")
