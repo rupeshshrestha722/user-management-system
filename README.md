@@ -13,14 +13,14 @@ The configuration can be changed in `./src/main/resources/application.properties
 
 ## Initialize
 
-Create the first user by running following command in the database
+Create the role  by running following command in the database (It wi;; automcatically inserted while running application)
 ```sql
-insert  into `users`(`id`,`email`,`first_name`,`last_name`,`password`,`username`,`role`, `dob`)
-values (1,'rupesh@gmail.com','Rupesh','Shrestha','$2y$10$Ksf4mVvSHraszPdDxhXhJuibNj6Q6v/ou01CH0IZMZl5CtaTmLnvC','rupesh','USER', '1994-03-19');
+insert  into `role`(`id`,`name`)
+values (1,'USER');
 ```
-username: rupesh
-password: password
+Create a User by requesting /users api 
 
+Do Login to hit other requests
 
 ## Local Deployment
 * Create a new database

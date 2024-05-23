@@ -18,20 +18,28 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class UserServiceImpl implements UserService {
 
-    private RoleRepository roleRepository;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final RoleRepository roleRepository;
 
-    private UserRepository userRepository;
+    @Override
+    public Page<User> findUsers(Pageable pageable) {
+        return userRepository.findAll(pageable);
+    }
 
-    private PasswordEncoder passwordEncoder;
+    @Override
+    public Optional<User> findUserByUsername(String username) {
+        return userRepository.findUserByUsername(username);
+    }
 
     @Override
     public User adduser(UserRequestDto userRequestDto) {
-        Optional<Role> role = roleRepository.findRoleByName("USER");
-        if(role.isEmpty())  {
+        Optional<Role> roleOptional = roleRepository.findRoleByName("USER");
+        if(roleOptional.isEmpty()) {
             throw new ServerConfigException("No Role Configured");
         }
 
@@ -42,7 +50,7 @@ public class UserServiceImpl implements UserService {
         user.setLastName(userRequestDto.getLastName());
         user.setEmail(userRequestDto.getEmail());
         user.setDob(userRequestDto.getDob());
-        user.setRole(Set.of(role.get()));
+        user.setRole(Set.of(roleOptional.get()));
         return userRepository.save(user);
     }
 
@@ -57,58 +65,40 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Page<User> findUsers(Pageable pageable) {
-        return  userRepository.findAll(pageable);
-    }
-
-    @Override
-    public Optional<User> findUserByUsername(String username) {
-        return userRepository.findUserByUsername(username);
-    }
-
-    @Override
     public Optional<User> findUserByEmail(String email) {
         return userRepository.findUserByEmail(email);
     }
 
     @Override
-    public User updateUser(Long id, UserRequestDto userRequestDTO) {
-        Optional<User> optionalUser = userRepository.findById(id);
-
-        if(optionalUser.isPresent()) {
+    public User updateUser(Long userId, UserRequestDto userRequestDTO) {
+        Optional<User> optionalUser = userRepository.findById(userId);
+        if (optionalUser.isPresent()) {
             User user = new User();
-            user.setId(id);
+            user.setId(userId);
 
-            //validate if new email pased, check if it is already registered
+            //validate if new email passed, check if it is already registered
             Optional<User> userByEmail = userRepository.findUserByEmail(userRequestDTO.getEmail());
-
-            if(userByEmail.isEmpty() || optionalUser.get().getEmail().equals(userRequestDTO.getEmail())) {
+            if(userByEmail.isEmpty() || optionalUser.get().getEmail().equals(userRequestDTO.getEmail())){
                 user.setEmail(userRequestDTO.getEmail());
             }
-
             //validate if new username is passed, check if it is already used
             Optional<User> userByUsername = userRepository.findUserByUsername(userRequestDTO.getUsername());
             if ( userByUsername.isEmpty() || optionalUser.get().getUsername().equals(userRequestDTO.getUsername())) {
                 user.setUsername(userRequestDTO.getUsername());
             }
-
             if(!userRequestDTO.getPassword().isBlank() ){
                 user.setPassword(passwordEncoder.encode(userRequestDTO.getPassword()));
             } else {
                 user.setPassword(optionalUser.get().getPassword());
             }
-
             user.setRole(optionalUser.get().getRole());
             user.setFirstName(userRequestDTO.getFirstName());
             user.setLastName(userRequestDTO.getLastName());
             user.setDob(userRequestDTO.getDob());
 
             return userRepository.save(user);
-
-
         } else {
-            throw new BadrequestException("No User found");
-
+            throw new BadrequestException("No such user exists");
         }
     }
 

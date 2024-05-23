@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "54817826-14ca-4c20-be48-532904ba8929",
+		"name": "User Management Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1163985"
+	},
+	"item": [
+		{
+			"name": "Add User",
+			"item": [
+				{
+					"name": "Invalid Request",
+					"item": [
+						{
+							"name": "Request 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"\",\n    \"firstName\" : \"\",\n    \"lastName\" : \"\",\n    \"email\" : \"\",\n    \"dateOfBirth\" : \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"use\",\n    \"firstName\" : \"\",\n    \"lastName\" : \"\",\n    \"email\" : \"\",\n    \"dateOfBirth\" : \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"username1\",\n    \"firstName\" : \"\",\n    \"lastName\" : \"\",\n    \"email\" : \"\",\n    \"dateOfBirth\" : \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"username1\",\n    \"firstName\" : \"Ram\",\n    \"lastName\" : \"Pokhrel\",\n    \"email\" : \"\",\n    \"dateOfBirth\" : \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"ram.pokhrel\",\n    \"firstName\" : \"Ram\",\n    \"lastName\" : \"Pokhrel\",\n    \"email\" : \"ram@gmail.com\",\n    \"dateOfBirth\" : \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"ram.pokhrel\",\n    \"firstName\" : \"Ram\",\n    \"lastName\" : \"Pokhrel\",\n    \"email\" : \"ram@gmail.com\",\n    \"dateOfBirth\" : \"2024-08-12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "valid Request",
+					"item": [
+						{
+							"name": "Request 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"ram.pokhrel\",\n    \"password\": \"helloworld\",\n    \"firstName\" : \"Ram\",\n    \"lastName\" : \"Pokhrel\",\n    \"email\" : \"ram@gmail.com\",\n    \"dateOfBirth\" : \"2024-01-12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"shyam.pokhrel\",\n    \"password\": \"helloworld\",\n    \"firstName\" : \"Shyam\",\n    \"lastName\" : \"Pokhrel\",\n    \"email\" : \"shyam@gmail.com\",\n    \"dateOfBirth\" : \"2024-01-12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"sijan.ghimire\",\n    \"password\": \"helloworld\",\n    \"firstName\" : \"Sijan\",\n    \"lastName\" : \"Ghimire\",\n    \"email\" : \"sijanghimire@gmail.com\",\n    \"dateOfBirth\" : \"2024-01-12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Sita.Saru\",\n    \"password\": \"helloworld\",\n    \"firstName\": \"Sita\",\n    \"lastName\": \"Saru\",\n    \"email\": \"sitasaru@gmail.com\",\n    \"dateOfBirth\": \"2024-01-12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request 5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"Sita.Sharma\",\n    \"password\": \"helloworld\",\n    \"firstName\" : \"Sita\",\n    \"lastName\" : \"Sharma\",\n    \"email\" : \"sitasharma@gmail.com\",\n    \"dateOfBirth\" : \"2024-01-12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get User",
+			"item": [
+				{
+					"name": "Fetch users using Paginations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJVU0VSIl0sInN1YiI6InJhbS5wb2tocmVsIiwiaWF0IjoxNzEzNTk1MzExLCJleHAiOjE3MTM5NTUzMTF9.edZVrRkCZVqo2SZU8xizpSBwmxCr-eBeGkdnhCRB-Bw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/users?page=0&size=3&sort=username",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "sort",
+									"value": "username"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api/users/:username",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJVU0VSIl0sInN1YiI6InJhbS5wb2tocmVsIiwiaWF0IjoxNzEzNTk1MzExLCJleHAiOjE3MTM5NTUzMTF9.edZVrRkCZVqo2SZU8xizpSBwmxCr-eBeGkdnhCRB-Bw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/users/:username",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "shyam.ghimire"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api/users/first-name/:firstName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJVU0VSIl0sInN1YiI6InJhbS5wb2tocmVsIiwiaWF0IjoxNzEzNTk1MzExLCJleHAiOjE3MTM5NTUzMTF9.edZVrRkCZVqo2SZU8xizpSBwmxCr-eBeGkdnhCRB-Bw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/users/first-name/:firstName",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"first-name",
+								":firstName"
+							],
+							"variable": [
+								{
+									"key": "firstName",
+									"value": "shyam"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api/users/last-name/:lastName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJVU0VSIl0sInN1YiI6InJhbS5wb2tocmVsIiwiaWF0IjoxNzEzNTk1MzExLCJleHAiOjE3MTM5NTUzMTF9.edZVrRkCZVqo2SZU8xizpSBwmxCr-eBeGkdnhCRB-Bw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/users/last-name/:lastName",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"last-name",
+								":lastName"
+							],
+							"variable": [
+								{
+									"key": "lastName",
+									"value": "ghimire"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api/users/email/:email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJVU0VSIl0sInN1YiI6InJhbS5wb2tocmVsIiwiaWF0IjoxNzEzNTk1MzExLCJleHAiOjE3MTM5NTUzMTF9.edZVrRkCZVqo2SZU8xizpSBwmxCr-eBeGkdnhCRB-Bw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/users/email/:email",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"email",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "shyamghimire@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "localhost:8080/api/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"JWT\",pm.response.json().token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"rupesh\",\n    \"password\" : \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "update localhost:8080/api/users/:id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJVU0VSIl0sInN1YiI6InJhbS5wb2tocmVsIiwiaWF0IjoxNzEzNjAxNTgwLCJleHAiOjE3MTM2Mzc1ODB9.iuYSriDmjgyO0MzWX_x6TGtH8i6DHU9kSd14Hjft8E4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"ram.pokhrel\",\n    \"firstName\" : \"Ram\",\n    \"lastName\" : \"Pokhrel\",\n    \"password\" : \"helloworld\",\n    \"email\" : \"rampokhrel@gmail.com\",\n    \"dateOfBirth\" : \"2024-01-12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete localhost:8080/api/users/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "jwt_token",
+			"value": ""
+		}
+	]
+}
